@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: 'postgres'
+    volumes:
+      - ./tmp/data/postgresql:/postgresql
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+volumes:
+  postgres:
